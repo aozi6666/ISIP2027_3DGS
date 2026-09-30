@@ -1,141 +1,70 @@
 # Writing TODO（会议版总控）
 
-> 用途：追踪占位、命名统一、已知冲突与下一节写作顺序。  
-> 原则：先定名 → 再写正文 → 最后统一 BibTeX 自动编号。
+> 更新：2026-09-30 — 正文/表已齐；卡在 **main 骨架 + 图取消注释 + bib**。
 
 ---
 
-## 0. 已锁定结论
+## 0. 已锁定（勿再改名）
 
 | 项 | 结论 |
 |----|------|
-| adaptation branch | **有训练**（cross-attention + lightweight fusion；称 VGGT-Depth） |
-| GT depth | **重建阶段使用** → Setup 已声明 |
-| Setup depth 模型 | **VGGT / VGGT-Depth**；无 ZoeDepth |
-| Ablation 第三列 | **Visibility Balancing\*** + 脚注 = DVR |
-| Discussion | 只用 **DVR** |
-| DVR 首次 `(DVR)` | **3.1** |
-| 原 Fig.3 | **默认删除** |
-| Results 结构 | **合成** `\subsection{Quantitative and Qualitative Results}`（含 compact Gradient） |
-| Setup baselines | **E2=A**：指向 Tables 1–2，不列方法名单 |
-| 数据集表题 | **LLFF 360**（正文/Setup/表题统一） |
-| Table 3 LPIPS | 与 Table 1/2 同为 **LPIPS\***（$\times 10^{2}$） |
-| Fig.5 | Mip-NeRF 360、**4-view**、会议版**一行** |
-
-### 三模块
-```text
-Visual Hull Initialization
-  → VGGT / Depth-Guided Densification
-  → Dynamic Visibility Regularization (DVR)
-```
+| 三模块 | Visual Hull Initialization → **VGGT / Depth-Guided Densification** → **Dynamic Visibility Regularization (DVR)** |
+| DVR 首次 `(DVR)` | **3.1**；Intro 只用全称 |
+| Ablation 第三列 | Visibility Balancing\* + 脚注 = DVR |
+| Setup | VGGT-Depth（有训练 adaptation）+ **GT depth**；baselines → Tables 1–2；**无 ZoeDepth** |
+| 数据集名 | **LLFF 360** |
+| LPIPS | Tables 1–3 均为 **LPIPS\***（$\times10^{2}$） |
+| Results | Quant+Qual+Gradient **合并**一个 subsection |
+| Fig.5 | Mip-NeRF 360、4-view、一行；文件现为 `qualitative.png` |
+| 表样式 | 保留 `latex/` 彩色；方法名 **SynGS(Ours)** |
 
 ---
 
-## 1. 参考文献预留
+## 1. 还没做（按优先级）
 
-- [ ] `\bibliography{references}`；占位 → 真实 key；BibTeX 自动编号
+### P0
+- [x] **`main.tex` 论文骨架**（US letter；title/作者/摘要已按作者原文写入；样例备份在 `docs/SPIE_main_template_sample.tex`）
+- [x] 表 packages + `\input{tables/table_style}`
+- [x] 图环境已启用（qualitative 用 `.png`）
+- [x] **keywords** / **通讯作者邮箱** 已按作者原文写入
+- [ ] **Acknowledgments**：未写入（避免自造资助信息）
 
-| 占位 | 位置 |
+### P1 — 参考文献
+- [ ] 清空 `references.bib` 样例，写入真实条目并映射 `refN`
+- [ ] BibTeX 编译通过
+
+### P2 — 投稿打磨
+- [ ] 编译检查版式 / 无严重报错
+- [ ] checklist / 须知
+- [ ] 可选：删模板残留图 `mcr3b.eps`、`MultimediaFigure.jpg`
+
+---
+
+## 2. 已完成
+
+| 模块 | 状态 |
 |------|------|
-| `ref2`,`ref3` | Introduction (sparse-view challenges) |
-| `ref6`–`ref16` | Related Work / Intro priors |
-| `ref10`,`ref11` | Intro 3DGS |
-| `ref24`–`ref30` | Method / Intro SfM |
-| `ref25`,`ref26`,`ref37` | Intro init / visibility |
-| `ref36`–`ref43` | 3.4 |
-| `ref44`,`ref45` | Setup（Mip-NeRF 360 / LLFF 360） |
+| Intro / Related Work / Method 3.1–3.4 | 已写 |
+| Experiments Setup / Results+Gradient+Qual / Ablation | 已写 |
+| Conclusion | 已写 |
+| Tables 1–3 | 已从 `latex/` 迁入（数据+彩色） |
+| `tables/table_style.tex` | 颜色定义就绪 |
+| Fig.dvr | 已插入 |
+| 术语词典 / 贡献点 `notes/contributions.md` | 已同步 |
 
----
-
-## 2. 图片 / 表格
-
-| 资源 | 状态 |
-|------|------|
-| `fig:framework` / `fig:vggt_depth` | 注释占位 |
-| `fig:dvr`（Fig.3） | **启用**：`figures/dvr_dropout.png`；caption 含 DVR |
-| `fig:gradient`（Fig.4） | 正文已写；图注释占位 `figures/gradient.pdf` |
-| `fig:qualitative`（Fig.5） | 正文已写；一行裁切待贴 `figures/qualitative.pdf` |
-| `tables/mip360_results.tex` | **已迁入** latex 数据+彩色；`SynGS(Ours)` |
-| `tables/llff_results.tex` | **已迁入**；表头/caption = **LLFF 360** |
-| `tables/ablation.tex` | **已迁入**；脚注 DVR；LPIPS$^{*}$ |
-| `tables/table_style.tex` | 颜色定义；main 导言区需 booktabs/multirow/adjustbox/xcolor |
-
----
-
-## 3. 术语词典（强制）
-
-| 术语 | 用法 |
-|------|------|
-| Visual Hull Initialization / Depth Densification / DVR | 正文模块 |
-| Visibility Balancing\* | 仅 Ablation 表 + 脚注 |
-| LLFF 360 | Setup + Table 2 + 正文 LLFF 段 |
-| LPIPS\* | Tables 1–3 统一 $\times 10^{2}$ |
-| ~~ZoeDepth~~ / ~~SparseNeRF 统一名单~~ | Setup 已不列具体 baseline |
-
----
-
-## 4. 已落实
-
-- [x] Method 3.1–3.4
-- [x] Setup：VGGT + GT depth；baselines → Tables~\ref{tab:mip360},~\ref{tab:llff}；LLFF 360
-- [x] Results 合并正文（诚实写 LPIPS / 9-view）
-- [x] Ablation 正文 + 表壳 + DVR 脚注
-- [x] Introduction（补齐叙事；三模块正式名；itemize 贡献；无 `(DVR)` / 无 opacity compensation）
-- [ ] 从原稿粘贴 Table 1–3 完整数值
-- [ ] 贴 Fig.4 / 单行 Fig.5 并取消注释
-- [x] Conclusion（三模块正式名；无 LPIPS 句；半句 future work on densification efficiency）
-- [x] 从 `latex/` 迁入 Table 1–3（原数据+彩色；Ours→SynGS(Ours)）
-- [ ] 贴 Fig 并取消注释（framework/vggt_depth/gradient/qualitative；dvr 已启用）
-- [ ] bib；`main.tex` 骨架 + 表所需 packages + `\input{tables/table_style}`
-
----
-
-## 4c. Introduction — 已确认并写入
-
-| # | 结论 |
-|---|------|
-| I1 | 补齐叙事的 conference Intro 骨架 |
-| I2 | 统一 **VGGT / Depth-Guided Densification** |
-| I3 | **itemize** |
-| I4 | SynGS 总述点名三模块正式名 |
-
----
-
-## 4d. Conclusion — 已确认并写入
-
-| # | 结论 |
-|---|------|
-| C1 | **不加** LPIPS vs D²GS |
-| C2 | **加半句** future work（densification efficiency） |
-| 命名 | Dynamic Visibility Regularization；无旧长名 |
-
----
-
-## 5. sections/ 进度
-
+### sections 一览
 | 文件 | 状态 |
 |------|------|
-| `01_introduction.tex` | 已写 |
-| `02_related_work.tex` | 初稿 |
-| `method/01`–`04` | Method 齐 |
-| `experiments/01`,`02`,`05` | 已写 |
-| `05_conclusion.tex` | **已写** |
-
-### 工程
-- [ ] `main.tex` 改论文骨架
-- [ ] title / authors / keywords
+| `01_introduction.tex` | 齐 |
+| `02_related_work.tex` | 齐（cite 占位） |
+| `method/01`–`04` | 齐（除 framework/vggt 图仍注释） |
+| `experiments/01,02,05` | 齐（gradient/qual 图仍注释） |
+| `05_conclusion.tex` | 齐 |
 
 ---
 
-## 6. 下一步
+## 3. 建议下一步
 
-1. 粘贴 Table 1–3 数值 + 图文件
-2. bib → `main.tex` 骨架（`\input{sections/...}`）
-
----
-
-## 7. 投稿前
-
-- [ ] checklist；无 `??`；术语/表题一致
-- [ ] 全文 cite 映射与 bib 对齐（原稿编号错位）
-- [ ] Discussion/旧稿若再压缩：删 Densification-Progressive… 旧名
+1. 填 `references.bib` 并映射 `refN`
+2. `pdflatex main && bibtex main && pdflatex main && pdflatex main`
+3. 可选：Acknowledgments 资助信息

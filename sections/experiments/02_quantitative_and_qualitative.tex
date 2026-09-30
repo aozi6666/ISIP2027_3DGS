@@ -16,21 +16,19 @@ The LLFF 360 results in Table~\ref{tab:llff} show a similar trend under highly s
 \textbf{Gradient Analysis.}
 Figure~\ref{fig:gradient} provides a compact analysis of the optimization behavior associated with Dynamic Visibility Regularization. SynGS maintains higher average gradient magnitudes across the normalized distance intervals, with the difference becoming more pronounced for distant Gaussian primitives. In the $0.8$--$1.0$ interval, the average gradient increases from approximately $0.2$ for the baseline to approximately $1.2$ with SynGS, consistent with stronger supervision for weakly visible regions.
 
-% Fig.4 — compact; place after LLFF paragraph (uncomment when figures/gradient.pdf is ready)
-% \begin{figure}[t]
-% \centering
-% \includegraphics[width=\linewidth]{figures/gradient.pdf}
-% \caption{Average gradient magnitude of Gaussian primitives across normalized distance intervals.}
-% \label{fig:gradient}
-% \end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/gradient.pdf}
+\caption{Average gradient magnitude of Gaussian primitives across normalized distance intervals.}
+\label{fig:gradient}
+\end{figure}
 
 \textbf{Qualitative Results.}
 Figure~\ref{fig:qualitative} shows the qualitative comparison under the 4-view setting on Mip-NeRF 360. Compared with the baseline methods, SynGS produces fewer floating artifacts and more complete object boundaries, while preserving finer structures in regions where several competing methods exhibit broken contours or missing details. These differences are most visible around object edges and thin structures.
 
-% Fig.5 — conference: ONE representative row; Mip-NeRF 360, 4-view
-% \begin{figure*}[t]
-% \centering
-% \includegraphics[width=\textwidth]{figures/qualitative.pdf}
-% \caption{Qualitative comparison under the 4-view sparse-input setting on Mip-NeRF 360. SynGS produces fewer floating artifacts and more complete structural boundaries than the compared methods.}
-% \label{fig:qualitative}
-% \end{figure*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/qualitative.png}
+\caption{Qualitative comparison under the 4-view sparse-input setting on Mip-NeRF 360. SynGS produces fewer floating artifacts and more complete structural boundaries than the compared methods.}
+\label{fig:qualitative}
+\end{figure*}
