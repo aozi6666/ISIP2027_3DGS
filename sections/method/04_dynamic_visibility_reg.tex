@@ -1,7 +1,7 @@
 \subsection{Dynamic Visibility Regularization}
 \label{sec:dvr}
 
-The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{ref36,ref37}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism, as illustrated in Fig.~\ref{fig:dvr}.
+The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{Xu25_DropoutGS,Park25_DropGaussian}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism, as illustrated in Fig.~\ref{fig:dvr}.
 
 \begin{figure}[ht]
 \centering
@@ -17,7 +17,7 @@ r_t=\min\left(r_{\max},\,\gamma\frac{t}{T}\right),
 \end{equation}
 where $t$ and $T$ denote the current and total training iterations, respectively, $r_{\max}$ is the maximum dropout ratio, and $\gamma$ controls the growth rate and is set to $0.1$--$0.2$. Early training therefore uses weak regularization to preserve geometric convergence, while later training applies stronger dropout to reduce overfitting to the sparse training views.
 
-Random dropout reduces the number of primitives contributing to each rendered pixel and can induce opacity or scale compensation if used alone. We therefore keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives~\cite{ref40}, the dropout branch is left uncompensated, while the complete Gaussian set is rendered in parallel and supervised by the same reconstruction target. Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ denote the full and dropout renderings, and let $I$ be the ground-truth image. We use the standard color loss $\mathcal{L}_{\mathrm{color}}=\mathcal{L}_{1}+\lambda\mathcal{L}_{\mathrm{D\text{-}SSIM}}$ with $\lambda=0.2$~\cite{ref42,ref43}. The final objective is
+Random dropout reduces the number of primitives contributing to each rendered pixel and can induce opacity or scale compensation if used alone. We therefore keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives~\cite{Park25_DropGaussian}, the dropout branch is left uncompensated, while the complete Gaussian set is rendered in parallel and supervised by the same reconstruction target. Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ denote the full and dropout renderings, and let $I$ be the ground-truth image. We use the standard color loss $\mathcal{L}_{\mathrm{color}}=\mathcal{L}_{1}+\lambda\mathcal{L}_{\mathrm{D\text{-}SSIM}}$ with $\lambda=0.2$~\cite{Kerbl23_3DGS}. The final objective is
 \begin{equation}
 \label{eq:dvr_loss}
 \mathcal{L}

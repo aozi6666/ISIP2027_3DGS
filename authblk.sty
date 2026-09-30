@@ -1,0 +1,47 @@
+%%
+%% Local authblk.sty (from CTAN package `preprint`, LPPL).
+%% TeX Live package name is `preprint`, NOT `authblk`:
+%%   sudo tlmgr install preprint
+%% This file is a project-local fallback so SPIE compiles under BasicTeX.
+%%
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{authblk}[2001/02/27 1.3 (PWD) local-fallback]
+
+\newcounter{authors}
+\newcounter{affil}
+\newcommand{\Authfont}{\normalfont}
+\newcommand{\Affilfont}{\normalfont\small}
+\newcommand{\Authsep}{, }
+\newcommand{\Authand}{ and }
+\newcommand{\Authands}{, and }
+\newlength{\affilsepwd}
+\setlength{\affilsepwd}{1em}
+
+\gdef\@author{}
+\renewcommand\author{\@ifnextchar[\author@i{\author@i[]}}
+\def\author@i[#1]#2{%
+  \stepcounter{authors}%
+  \begingroup
+    \let\protect\@unexpandable@protect
+    \protected@xdef\@author{\@author
+      \ifnum\value{authors}>1
+        \ifnum\value{authors}=2 \Authand\else\Authsep\fi
+      \fi
+      {\Authfont #2\ifx\relax#1\relax\else\textsuperscript{\normalfont#1}\fi}}%
+  \endgroup
+}
+
+\newcommand\affil{\@ifnextchar[\@affil@i{\@affil@i[]}}
+\def\@affil@i[#1]#2{%
+  \stepcounter{affil}%
+  \begingroup
+    \let\protect\@unexpandable@protect
+    \protected@xdef\@author{\@author
+      \\[\affilsepwd]
+      {\Affilfont
+       \ifx\relax#1\relax\else\textsuperscript{\normalfont#1}\,\fi
+       #2}}%
+  \endgroup
+}
+
+\endinput
