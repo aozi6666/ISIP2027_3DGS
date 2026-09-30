@@ -1,0 +1,31 @@
+\subsection{Dynamic Visibility Regularization}
+\label{sec:dvr}
+
+The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{ref36,ref37}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism.
+
+At iteration $t$, DVR randomly masks a subset of Gaussian primitives for dropout rendering. The remaining primitives are optimized from the resulting rendering error, changing the set of primitives that carries the reconstruction signal across iterations. The dropout ratio increases linearly with training progress:
+\begin{equation}
+\label{eq:dropout_ratio}
+r_t=\min\left(r_{\max},\,\gamma\frac{t}{T}\right),
+\end{equation}
+where $t$ and $T$ denote the current and total training iterations, respectively, $r_{\max}$ is the maximum dropout ratio, and $\gamma$ controls the growth rate and is set to $0.1$--$0.2$. Early training therefore uses weak regularization to preserve geometric convergence, while later training applies stronger dropout to reduce overfitting to the sparse training views.
+
+Random dropout reduces the number of primitives contributing to each rendered pixel and can induce opacity or scale compensation if used alone. We therefore keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives~\cite{ref40}, the dropout branch is left uncompensated, while the complete Gaussian set is rendered in parallel and supervised by the same reconstruction target. Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ denote the full and dropout renderings, and let $I$ be the ground-truth image. We use the standard color loss $\mathcal{L}_{\mathrm{color}}=\mathcal{L}_{1}+\lambda\mathcal{L}_{\mathrm{D\text{-}SSIM}}$ with $\lambda=0.2$~\cite{ref42,ref43}. The final objective is
+\begin{equation}
+\label{eq:dvr_loss}
+\mathcal{L}
+=
+\mathcal{L}_{\mathrm{color}}(I_{\mathrm{full}},I)
++
+\beta\,\mathcal{L}_{\mathrm{color}}(I_{\mathrm{drop}},I),
+\end{equation}
+where $\beta$ is set to $0.5$--$1.0$. The full-render term stabilizes the reconstruction target, while the dropout term regularizes optimization under sparse visibility.
+
+% Fig.3 (Gaussian dropout schematic) intentionally omitted for the conference version;
+% Fig.~\ref{fig:framework} already covers the DVR stage. If space remains later:
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=0.85\textwidth]{figures/dvr_dropout.pdf}
+% \caption{Gaussian dropout mechanism used in Dynamic Visibility Regularization (DVR).}
+% \label{fig:dvr}
+% \end{figure}

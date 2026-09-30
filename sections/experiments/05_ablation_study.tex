@@ -1,0 +1,6 @@
+\subsection{Ablation Study}
+\label{sec:ablation}
+
+\input{tables/ablation}
+
+Table~\ref{tab:ablation} isolates the contributions of the three components under the same training settings. Visual Hull Initialization establishes the geometric initialization baseline, yielding a PSNR of 17.51~dB. Adding Depth Densification increases PSNR to 24.96~dB, representing the largest performance change in the ablation and indicating the importance of depth-guided point supplementation. Adding DVR further improves the complete configuration to 26.18~dB, with corresponding improvements in SSIM and LPIPS. The full SynGS configuration therefore achieves the best combined result in the table. The progression supports the complementary roles of Visual Hull Initialization, Depth Densification, and DVR in sparse-view reconstruction.

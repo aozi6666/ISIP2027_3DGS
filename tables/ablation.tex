@@ -1,12 +1,25 @@
-% Ablation table — \input from experiments section
-% \begin{table}[ht]
-% \caption{...}
-% \label{tab:ablation}
-% \begin{center}
-% \begin{tabular}{|l|c|c|c|}
-% \hline
-% Variant & PSNR$\uparrow$ & SSIM$\uparrow$ & LPIPS$\downarrow$ \\
-% \hline
-% \end{tabular}
-% \end{center}
-% \end{table}
+% Table 3 — Ablation. LPIPS* same scaling as Tables 1--2 ($\times 10^{2}$).
+% Column Visibility Balancing* = DVR (footnote).
+\begin{table}[t]
+\caption{Ablation study of SynGS components. LPIPS$^{*}$ denotes LPIPS $\times 10^{2}$.}
+\label{tab:ablation}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rule[-1ex]{0pt}{3.5ex}
+Visual Hull Init & Depth Densification & Visibility Balancing$^{*}$ & SSIM$\uparrow$ & PSNR$\uparrow$ & LPIPS$^{*}$$\downarrow$ \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}
+\checkmark &  &  & TODO & 17.51 & TODO \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}
+\checkmark & \checkmark &  & TODO & 24.96 & TODO \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}
+\checkmark & \checkmark & \checkmark & TODO & 26.18 & TODO \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{-0.5em}
+{\footnotesize $^{*}$Visibility Balancing denotes Dynamic Visibility Regularization (DVR).}
+\end{table}

@@ -1,5 +1,12 @@
-% Related Work
+% Related Work — SPIE: section titles ALL CAPS; citations via \cite{}
 \section{RELATED WORK}
 \label{sec:related}
 
-% TODO
+\textbf{Sparse-view NeRF Reconstruction.}
+Neural Radiance Fields (NeRF) represent scenes as implicit radiance fields and achieve high-quality novel view synthesis through differentiable rendering~\cite{ref6}. However, sparse-view settings introduce severe ambiguity due to insufficient observations, making geometry estimation and view consistency challenging. Existing sparse-view NeRF approaches alleviate this issue by incorporating additional priors, including depth supervision, geometric constraints, and regularization on unobserved views. For example, depth-guided methods improve structural consistency with estimated depth priors~\cite{ref7,ref8}, while regularization-based approaches constrain the reconstruction of unseen regions~\cite{ref9}. Despite these improvements, NeRF-based methods generally require expensive iterative optimization and dense sampling, limiting their efficiency under practical sparse-view scenarios.
+
+\textbf{Sparse-view 3D Gaussian Splatting.}
+3D Gaussian Splatting (3DGS) introduces an explicit scene representation based on optimizable Gaussian primitives and enables efficient training and real-time rendering through differentiable rasterization~\cite{ref10}. Its efficiency has made it a promising framework for sparse-view reconstruction. Recent sparse-view 3DGS methods mainly improve reconstruction stability through depth regularization, enhanced initialization, Gaussian regularization, and learned priors. Depth-based approaches introduce additional geometric supervision to constrain Gaussian optimization, while initialization-based methods improve the quality and distribution of initial Gaussian primitives~\cite{ref12,ref13}. Other methods explore sparse Gaussian generation and regularization strategies to recover missing structures under limited observations~\cite{ref14,ref15,ref16}. These approaches demonstrate the effectiveness of combining explicit representations with additional priors for sparse-view reconstruction.
+
+\textbf{Geometry and Depth Priors for Sparse Reconstruction.}
+Although existing approaches have improved sparse-view reconstruction through depth supervision, Gaussian regularization, and improved initialization, obtaining reliable coarse geometry, completing fine structures, and maintaining balanced optimization under sparse visibility remain challenging. In particular, sparse observations may still lead to incomplete geometry, unstable Gaussian distributions, and biased optimization toward highly visible regions. To address these challenges, SynGS jointly exploits explicit geometry initialization, depth-guided densification, and dynamic visibility regularization, providing a unified framework for more stable sparse-view 3D Gaussian Splatting reconstruction.
