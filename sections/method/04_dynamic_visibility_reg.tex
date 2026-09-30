@@ -1,7 +1,14 @@
 \subsection{Dynamic Visibility Regularization}
 \label{sec:dvr}
 
-The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{ref36,ref37}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism.
+The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{ref36,ref37}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism, as illustrated in Fig.~\ref{fig:dvr}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/dvr_dropout.pdf}
+\caption{Overview of the proposed Gaussian Dropout mechanism in Dynamic Visibility Regularization (DVR).}
+\label{fig:dvr}
+\end{figure}
 
 At iteration $t$, DVR randomly masks a subset of Gaussian primitives for dropout rendering. The remaining primitives are optimized from the resulting rendering error, changing the set of primitives that carries the reconstruction signal across iterations. The dropout ratio increases linearly with training progress:
 \begin{equation}
@@ -20,12 +27,3 @@ Random dropout reduces the number of primitives contributing to each rendered pi
 \beta\,\mathcal{L}_{\mathrm{color}}(I_{\mathrm{drop}},I),
 \end{equation}
 where $\beta$ is set to $0.5$--$1.0$. The full-render term stabilizes the reconstruction target, while the dropout term regularizes optimization under sparse visibility.
-
-% Fig.3 (Gaussian dropout schematic) intentionally omitted for the conference version;
-% Fig.~\ref{fig:framework} already covers the DVR stage. If space remains later:
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[width=0.85\textwidth]{figures/dvr_dropout.pdf}
-% \caption{Gaussian dropout mechanism used in Dynamic Visibility Regularization (DVR).}
-% \label{fig:dvr}
-% \end{figure}

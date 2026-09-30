@@ -52,12 +52,13 @@ Visual Hull Initialization
 | 资源 | 状态 |
 |------|------|
 | `fig:framework` / `fig:vggt_depth` | 注释占位 |
-| `fig:dvr`（Fig.3） | 默认删 |
+| `fig:dvr`（Fig.3） | **启用**：`figures/dvr_dropout.png`；caption 含 DVR |
 | `fig:gradient`（Fig.4） | 正文已写；图注释占位 `figures/gradient.pdf` |
 | `fig:qualitative`（Fig.5） | 正文已写；一行裁切待贴 `figures/qualitative.pdf` |
-| `tables/mip360_results.tex` | 表壳 + caption；**数值待从原稿粘贴** |
-| `tables/llff_results.tex` | 表壳；caption = **LLFF 360**；数值待贴 |
-| `tables/ablation.tex` | 壳 + PSNR 17.51/24.96/26.18；SSIM/LPIPS\* 待贴；脚注已写 |
+| `tables/mip360_results.tex` | **已迁入** latex 数据+彩色；`SynGS(Ours)` |
+| `tables/llff_results.tex` | **已迁入**；表头/caption = **LLFF 360** |
+| `tables/ablation.tex` | **已迁入**；脚注 DVR；LPIPS$^{*}$ |
+| `tables/table_style.tex` | 颜色定义；main 导言区需 booktabs/multirow/adjustbox/xcolor |
 
 ---
 
@@ -83,9 +84,9 @@ Visual Hull Initialization
 - [ ] 从原稿粘贴 Table 1–3 完整数值
 - [ ] 贴 Fig.4 / 单行 Fig.5 并取消注释
 - [x] Conclusion（三模块正式名；无 LPIPS 句；半句 future work on densification efficiency）
-- [ ] 从原稿粘贴 Table 1–3 完整数值
-- [ ] 贴 Fig.4 / 单行 Fig.5 并取消注释
-- [ ] bib；`main.tex` 骨架
+- [x] 从 `latex/` 迁入 Table 1–3（原数据+彩色；Ours→SynGS(Ours)）
+- [ ] 贴 Fig 并取消注释（framework/vggt_depth/gradient/qualitative；dvr 已启用）
+- [ ] bib；`main.tex` 骨架 + 表所需 packages + `\input{tables/table_style}`
 
 ---
 
