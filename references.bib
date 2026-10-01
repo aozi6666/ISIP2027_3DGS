@@ -1,8 +1,8 @@
 % references.bib — R1 semantic rebuild; EXACTLY 48 entries
 % STABLE = verified enough for conference use
-% PLACEHOLDER_* = user must fill via notes/refs_search_todo.md
+% UNVERIFIED keepers = inventory; confirm before citing
 % Deleted from original list: #3 dissertation, #4 SIFT local journal, #11 dup of #5, #25 Ghana pollution
-% Added: Schonberger16_COLMAP, Park25_DropGaussian, Laurentini94_VisualHull, Zhang24_CoRGS
+% Added: Schonberger16_COLMAP, Park25_DropGaussian, Laurentini94_VisualHull, Zhang24_CoRGS, Song26_D2GS
 
 %% ===== STABLE: core method / related / datasets / metrics =====
 
@@ -182,8 +182,9 @@
   author    = {Jiawei Zhang and Jiahe Li and Xiaohan Yu and Lei Huang and Lin Gu and Jin Zheng and Xiao Bai},
   title     = {{CoR-GS}: Sparse-View {3D} Gaussian Splatting via Co-Regularization},
   booktitle = {Proc.\ European Conference on Computer Vision (ECCV)},
+  pages     = {335--352},
   year      = {2024},
-  note      = {Also arXiv:2405.12110; confirm final ECCV pagination}
+  doi       = {10.1007/978-3-031-73232-4_19}
 }
 
 @inproceedings{Kirillov23_SAM,
@@ -271,14 +272,12 @@
   note    = {VERIFY full author list; survey/invited article}
 }
 
-%% ===== PLACEHOLDER: D2GS (used in experiments; confirm metadata) =====
-
-@misc{PLACEHOLDER_D2GS,
-  author       = {TODO},
-  title        = {{D\textsuperscript{2}GS}: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction},
-  howpublished = {ICLR 2026 / arXiv:2510.08566 (VERIFY)},
-  year         = {2026},
-  note         = {PLACEHOLDER: fill authors from https://insta360-research-team.github.io/DDGS-website/ or ICLR PDF. Search: D2GS Depth-and-Density Guided Gaussian Splatting ICLR}
+@inproceedings{Song26_D2GS,
+  author    = {Meixi Song and Xin Lin and Dizhe Zhang and Haodong Li and Xiangtai Li and Bo Du and Lu Qi},
+  title     = {{D\textsuperscript{2}GS}: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction},
+  booktitle = {Proc.\ International Conference on Learning Representations (ICLR)},
+  year      = {2026},
+  note      = {Also arXiv:2510.08566; project: https://insta360-research-team.github.io/DDGS-website/}
 }
 
 %% ===== UNVERIFIED keepers from original #31-#48 (count preservation; not cited in current draft) =====

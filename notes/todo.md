@@ -1,6 +1,6 @@
 # Writing TODO（会议版总控）
 
-> 更新：2026-09-30 — bib R1 已落地（48 条）；正文 cite 已语义重挂。
+> 更新：2026-10-01 — 仅核清能确认的：D²GS 正式条；CoR-GS pages+DOI；未核清留给你检索。
 
 ---
 
@@ -18,9 +18,12 @@
 - [x] Tables 1–3 迁入
 - [x] **`references.bib` R1 语义重建（48 条）+ sections `\cite{}` 重挂**
 - [x] DVR：补编号公式 `eq:color_loss`（Kerbl: $(1-\lambda)\mathcal{L}_1+\lambda\mathcal{L}_{\mathrm{D-SSIM}}$）；`eq:dvr_loss` / `eq:dropout_ratio` 已有；不加 Bernoulli mask
-- [ ] **补全 `PLACEHOLDER_D2GS`**（见 `notes/refs_search_todo.md`）
-- [ ] 按 `refs_search_todo.md` 核对 UNVERIFIED 作者/页码（尤其若准备 cite）
-- [ ] 编译：在本地执行；日志请放 `output/`（agent 不再代跑终端）
+- [x] **补全 D²GS → `Song26_D2GS`**（ICLR 2026 / arXiv:2510.08566）
+- [x] 修 `\cite{ref30}` → `\cite{Wang25_VGGT}`
+- [x] Setup 补 baseline + SSIM/LPIPS cites；Related/Results 挂 D²GS
+- [x] `Zhang24_CoRGS` 补 pages 335–352 + DOI（已核）
+- [ ] **你检索** → 发我：`Song26_D2GS` 页码（可选）；以及任何打算 cite 的 UNVERIFIED（见 `refs_search_todo.md`）
+- [ ] 编译：本地执行；日志放 `output/`
 
 ### P1
 - [ ] Acknowledgments（有资助再写）
@@ -33,14 +36,15 @@
 
 | 文件 | 说明 |
 |------|------|
-| `references.bib` | 48 条；STABLE + PLACEHOLDER_D2GS + UNVERIFIED 库存 |
-| `notes/refs_search_todo.md` | **你要检索补全的清单与关键词** |
+| `references.bib` | 48 条；`Song26_D2GS` 已正式；其余 UNVERIFIED 为库存 |
+| `notes/refs_completion_plan.md` | L1/L2/L3 方案（L2 已执行） |
+| `notes/refs_search_todo.md` | 可选核对清单（P0 D²GS 已关） |
 | `notes/citation_audit.md` | 审计与策略说明 |
 
 ---
 
 ## 3. 下一步
 
-1. 你补 D²GS 正式作者信息 → 我可帮替换 `PLACEHOLDER_D2GS`  
-2. 本地编译看参考文献与版式  
-3. 抽查：每条正文 cite 是否对应正确论文  
+1. 本地编译；日志放 `output/`
+2. 抽查正文 cite ↔ 论文名
+3. （可选）L3：删从未 cite 的 UNVERIFIED，bib 瘦身

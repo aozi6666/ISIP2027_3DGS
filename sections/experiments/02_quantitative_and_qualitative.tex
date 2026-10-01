@@ -5,13 +5,13 @@
 \input{tables/mip360_results}
 
 \textbf{Mip-NeRF 360.}
-Table~\ref{tab:mip360} reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS achieves the highest PSNR and SSIM in all three settings, with the largest PSNR advantage appearing in the 4-view case, where it reaches 25.91~dB, 3.56~dB above D$^2$GS. The advantage remains clear as the number of input views increases. For LPIPS, however, D$^2$GS obtains lower values across the three settings. These results show that the main strength of SynGS lies in pixel fidelity and structural consistency rather than a uniform advantage over all perceptual metrics.
+Table~\ref{tab:mip360} reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS achieves the highest PSNR and SSIM in all three settings, with the largest PSNR advantage appearing in the 4-view case, where it reaches 25.91~dB, 3.56~dB above D$^2$GS~\cite{Song26_D2GS}. The advantage remains clear as the number of input views increases. For LPIPS, however, D$^2$GS obtains lower values across the three settings. These results show that the main strength of SynGS lies in pixel fidelity and structural consistency rather than a uniform advantage over all perceptual metrics.
 
 % Table 2 — caption uses ``LLFF 360'' (locked)
 \input{tables/llff_results}
 
 \textbf{LLFF 360.}
-The LLFF 360 results in Table~\ref{tab:llff} show a similar trend under highly sparse inputs. With four views, SynGS achieves the best PSNR, SSIM, and LPIPS among the compared methods, while under six views it obtains the highest PSNR and SSIM with LPIPS close to the best result. At nine views, the differences become smaller: D$^2$GS gives slightly higher PSNR and lower LPIPS, while CoR-GS achieves slightly higher SSIM. We therefore observe the clearest advantage of SynGS in the more challenging 4- and 6-view settings rather than claiming a uniform lead at nine views.
+The LLFF 360 results in Table~\ref{tab:llff} show a similar trend under highly sparse inputs. With four views, SynGS achieves the best PSNR, SSIM, and LPIPS among the compared methods, while under six views it obtains the highest PSNR and SSIM with LPIPS close to the best result. At nine views, the differences become smaller: D$^2$GS~\cite{Song26_D2GS} gives slightly higher PSNR and lower LPIPS, while CoR-GS~\cite{Zhang24_CoRGS} achieves slightly higher SSIM. We therefore observe the clearest advantage of SynGS in the more challenging 4- and 6-view settings rather than claiming a uniform lead at nine views.
 
 \textbf{Gradient Analysis.}
 Figure~\ref{fig:gradient} provides a compact analysis of the optimization behavior associated with Dynamic Visibility Regularization. SynGS maintains higher average gradient magnitudes across the normalized distance intervals, with the difference becoming more pronounced for distant Gaussian primitives. In the $0.8$--$1.0$ interval, the average gradient increases from approximately $0.2$ for the baseline to approximately $1.2$ with SynGS, consistent with stronger supervision for weakly visible regions.
