@@ -1,6 +1,6 @@
 \section{CONCLUSION}
 \label{sec:conclusion}
 
-In this work, we present SynGS, a sparse-view 3D Gaussian Splatting reconstruction method that integrates explicit geometric priors and transformer-based depth priors to improve reconstruction stability under limited observations. The proposed framework combines \textbf{Visual Hull Initialization}, \textbf{VGGT / Depth-Guided Densification}, and \textbf{Dynamic Visibility Regularization} to provide more reliable geometric initialization, enhance incomplete scene geometry, and reduce overfitting caused by sparse-view supervision.
+We present SynGS for sparse-view 3DGS, combining \textbf{Visual Hull Initialization}, \textbf{VGGT / Depth-Guided Densification}, and \textbf{Dynamic Visibility Regularization} for more reliable initialization, geometry completion, and reduced sparse-view overfitting.
 
-Experiments on the Mip-NeRF 360 and LLFF 360 datasets demonstrate that SynGS improves novel view synthesis quality under sparse-view settings. The results show that incorporating explicit geometric constraints and depth-guided densification improves structural consistency and rendering fidelity. While the proposed method achieves improved reconstruction quality, the additional point cloud densification process introduces memory overhead and computational costs. Improving the efficiency of densification without sacrificing reconstruction quality is left for future work.
+On Mip-NeRF 360 and LLFF 360, SynGS improves novel-view quality under sparse inputs. Densification adds memory and compute cost; more efficient densification without losing quality is left for future work.
