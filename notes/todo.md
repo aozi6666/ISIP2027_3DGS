@@ -17,9 +17,10 @@
 - [x] 图已启用
 - [x] Tables 1–3 迁入
 - [x] **`references.bib` R1 语义重建（48 条）+ sections `\cite{}` 重挂**
+- [x] DVR：补编号公式 `eq:color_loss`（Kerbl: $(1-\lambda)\mathcal{L}_1+\lambda\mathcal{L}_{\mathrm{D-SSIM}}$）；`eq:dvr_loss` / `eq:dropout_ratio` 已有；不加 Bernoulli mask
 - [ ] **补全 `PLACEHOLDER_D2GS`**（见 `notes/refs_search_todo.md`）
 - [ ] 按 `refs_search_todo.md` 核对 UNVERIFIED 作者/页码（尤其若准备 cite）
-- [ ] 编译：`pdflatex → bibtex → pdflatex ×2`，检查参考文献列表
+- [ ] 编译：在本地执行；日志请放 `output/`（agent 不再代跑终端）
 
 ### P1
 - [ ] Acknowledgments（有资助再写）
