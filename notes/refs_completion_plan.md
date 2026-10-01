@@ -1,11 +1,12 @@
 # 文献补齐方案
 
-> **规则**：只改能公开核到的字段；核不到的写进 `refs_search_todo.md`，等你发材料再改。
+> **2026-10-01 已执行**：删 UNVERIFIED；新增已核清条目并分散挂 cite。
 
-## 已完成
-- L2：`ref30`→VGGT；`Song26_D2GS`；Setup/Related/Results cites
-- `Zhang24_CoRGS`：pages `335--352`，DOI `10.1007/978-3-031-73232-4_19`
+## 规则
+- 只写能核到的字段；核不到不编造
+- Intro 方法列举每处 ≤2 cite key
+- InstantSplat / MVSplat 仅 Related，非实验 baseline
+- 无 ZoeDepth
 
-## 故意未改
-- D²GS **页码**（ICLR open proceedings 未见可靠页码区间）
-- 全部 `and others` / UNVERIFIED 库存（正文未 cite；避免瞎补作者）
+## 勘误
+- MVSplat 作者为 Chen et al., **ECCV 2024**（非 Charatan/CVPR；Charatan 为 pixelSplat）

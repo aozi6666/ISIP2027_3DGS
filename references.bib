@@ -1,10 +1,7 @@
-% references.bib — R1 semantic rebuild; EXACTLY 48 entries
-% STABLE = verified enough for conference use
-% UNVERIFIED keepers = inventory; confirm before citing
-% Deleted from original list: #3 dissertation, #4 SIFT local journal, #11 dup of #5, #25 Ghana pollution
-% Added: Schonberger16_COLMAP, Park25_DropGaussian, Laurentini94_VisualHull, Zhang24_CoRGS, Song26_D2GS
+% references.bib — verified cited entries only (inventory UNVERIFIED removed 2026-10-01)
+% Classics (NeRF/3DGS/SfM/metrics/VH) retained; new sparse-view additions 2021–2025 verified
 
-%% ===== STABLE: core method / related / datasets / metrics =====
+%% ===== Core cited (method / related / datasets / metrics) =====
 
 @inproceedings{Yang23_FreeNeRF,
   author    = {Jiawei Yang and Marco Pavone and Yue Wang},
@@ -187,14 +184,6 @@
   doi       = {10.1007/978-3-031-73232-4_19}
 }
 
-@inproceedings{Kirillov23_SAM,
-  author    = {Alexander Kirillov and Eric Mintun and Nikhila Ravi and Hanzi Mao and Chloe Rolland and Laura Gustafson and Tete Xiao and Spencer Whitehead and Alexander C. Berg and Wan-Yen Lo and Piotr Doll{\'a}r and Ross Girshick},
-  title     = {Segment Anything},
-  booktitle = {Proc.\ IEEE/CVF International Conference on Computer Vision (ICCV)},
-  pages     = {4015--4026},
-  year      = {2023}
-}
-
 @inproceedings{Yang24_DepthAnythingV2,
   author    = {Lihe Yang and Bingyi Kang and Zilong Huang and Zhen Zhao and Xiaogang Xu and Jiashi Feng and Hengshuang Zhao},
   title     = {Depth Anything {V2}},
@@ -214,221 +203,270 @@
   year    = {2025}
 }
 
-@article{Yang23_OpticsVH,
-  author  = {Z. Yang and others},
-  title   = {Real-Time Light-Field Generation Based on the Visual Hull for the {3D} Light-Field Display with Free-Viewpoint Texture Mapping},
-  journal = {Optics Express},
-  volume  = {31},
-  number  = {2},
-  pages   = {1125--1140},
-  year    = {2023},
-  note      = {VERIFY full author list from Optics Express record}
-}
-
-@article{Li24_AOM_VH,
-  author  = {K. Li and others},
-  title   = {Simple Non-Destructive and {3D} Multi-Layer Visual Hull Reconstruction with an Ultrabroadband Carbon Nanotubes Photo-Imager},
-  journal = {Advanced Optical Materials},
-  volume  = {12},
-  number  = {14},
-  pages   = {2302847},
-  year    = {2024},
-  note      = {VERIFY full author list from journal record}
-}
-
-@inproceedings{Xiao23_LevelS2fM,
-  author    = {Yuxi Xiao and others},
-  title     = {Level-{S}\textsuperscript{2}{fM}: Structure from Motion on Neural Level Set of Implicit Surfaces},
-  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages     = {17205--17214},
-  year      = {2023},
-  note      = {VERIFY full author list; NOT used as traditional SfM cite}
-}
-
-@inproceedings{Huang24_SCNeuS,
-  author    = {S. S. Huang and others},
-  title     = {{SC-NeuS}: Consistent Neural Surface Reconstruction from Sparse and Noisy Views},
-  booktitle = {Proc.\ AAAI Conference on Artificial Intelligence},
-  year      = {2024},
-  note      = {VERIFY authors/pages; peripheral to 3DGS mainline}
-}
-
-@inproceedings{Zou24_Sparse3D,
-  author    = {Z. X. Zou and others},
-  title     = {{Sparse3D}: Distilling Multiview-Consistent Diffusion for Object Reconstruction from Sparse Views},
-  booktitle = {Proc.\ AAAI Conference on Artificial Intelligence},
-  year      = {2024},
-  note      = {VERIFY authors/pages; peripheral to 3DGS mainline}
-}
-
-@article{Gao24_LOP_3DGS,
-  author  = {J. Gao and others},
-  title   = {Advances in Differentiable Rendering Based on Three-Dimensional Gaussian Splatting (Invited)},
-  journal = {Laser \& Optoelectronics Progress},
-  volume  = {61},
-  number  = {16},
-  pages   = {1611010},
-  year    = {2024},
-  note    = {VERIFY full author list; survey/invited article}
-}
-
 @inproceedings{Song26_D2GS,
   author    = {Meixi Song and Xin Lin and Dizhe Zhang and Haodong Li and Xiangtai Li and Bo Du and Lu Qi},
   title     = {{D\textsuperscript{2}GS}: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction},
   booktitle = {Proc.\ International Conference on Learning Representations (ICLR)},
   year      = {2026},
-  note      = {Also arXiv:2510.08566; project: https://insta360-research-team.github.io/DDGS-website/}
+  note      = {Also arXiv:2510.08566}
 }
 
-%% ===== UNVERIFIED keepers from original #31-#48 (count preservation; not cited in current draft) =====
-%% Treat as inventory; confirm before citing in text.
+%% ===== Added 2026-10-01 (verified; replace UNVERIFIED inventory) =====
 
-@inproceedings{Ding25_EyeNavGS,
-  author    = {Z. Ding and C. T. Lee and M. Zhu and others},
-  title     = {{EyeNavGS}: A 6-{DoF} Navigation Dataset and Record-n-Replay Software for Real-World {3DGS} Scenes in {VR}},
-  booktitle = {Proc.\ ACM International Conference on Multimedia},
-  pages     = {13126--13132},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
+@inproceedings{Jain21_DietNeRF,
+  author    = {Ajay Jain and Matthew Tancik and Pieter Abbeel},
+  title     = {Putting {NeRF} on a Diet: Semantically Consistent Few-Shot View Synthesis},
+  booktitle = {Proc.\ IEEE/CVF International Conference on Computer Vision (ICCV)},
+  pages     = {5885--5894},
+  year      = {2021}
 }
 
-@inproceedings{Wang26_GaussianHerding,
-  author    = {T. Wang and M. Li and G. Zeng and others},
-  title     = {Gaussian Herding Across Pens: An Optimal Transport Perspective on Global Gaussian Reduction for {3DGS}},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  volume    = {38},
-  pages     = {157898--157923},
-  year      = {2026},
-  note      = {UNVERIFIED metadata from author list}
-}
-
-@inproceedings{Kim26_GDoFS,
-  author    = {Y. Kim and J. Choi and S. Yoon},
-  title     = {{GDoFS}: Gaussian {DoF} Separation for Plausible {3D} Geometry in Sparse-View {3DGS}},
-  booktitle = {Proc.\ IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  pages     = {6643--6652},
-  year      = {2026},
-  note      = {UNVERIFIED metadata from author list}
-}
-
-@article{VanDeVen26_ApplePoseGS,
-  author  = {R. Van De Ven and T. Bresilla and B. Nelissen and others},
-  title   = {Enhancing Annotations for {5D} Apple Pose Estimation through {3D} Gaussian Splatting ({3DGS})},
-  journal = {Smart Agricultural Technology},
-  pages   = {101910},
-  year    = {2026},
-  note    = {UNVERIFIED metadata from author list}
-}
-
-@inproceedings{Zhang25_CobGS,
-  author    = {J. Zhang and J. Jiang and Y. Chen and others},
-  title     = {{Cob-GS}: Clear Object Boundaries in {3DGS} Segmentation Based on Boundary-Adaptive Gaussian Splitting},
+@inproceedings{Kim22_InfoNeRF,
+  author    = {Mijeong Kim and Seonguk Seo and Bohyung Han},
+  title     = {{InfoNeRF}: Ray Entropy Minimization for Few-Shot Neural Volume Rendering},
   booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages     = {19335--19344},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
+  pages     = {12912--12921},
+  year      = {2022}
 }
 
-@inproceedings{Luo24_MEGA,
-  author    = {K. Luo and S. Ye and T. Ouyang and others},
-  title     = {{MEGA}: Mesh-Aligned {3DGS} Towards Geometry-Preserving Online Reconstruction},
-  booktitle = {IFIP International Conference on Network and Parallel Computing},
-  pages     = {396--408},
-  year      = {2024},
-  note      = {UNVERIFIED metadata from author list}
+@inproceedings{Truong23_SPARF,
+  author    = {Prune Truong and Marie-Julie Rakotosaona and Fabian Manhardt and Federico Tombari},
+  title     = {{SPARF}: Neural Radiance Fields From Sparse and Noisy Poses},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {4190--4200},
+  year      = {2023}
 }
 
-@inproceedings{Dong25_3DGSDrag,
-  author    = {J. Dong and Y. X. Wang},
-  title     = {{3DGS-Drag}: Dragging Gaussians for Intuitive Point-Based {3D} Editing},
-  booktitle = {Proc.\ International Conference on Learning Representations (ICLR)},
-  pages     = {82799--82815},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
+@inproceedings{Somraj23_ViPNeRF,
+  author    = {Nagabhushan Somraj and Rajiv Soundararajan},
+  title     = {{ViP-NeRF}: Visibility Prior for Sparse Input Neural Radiance Fields},
+  booktitle = {Proc.\ ACM SIGGRAPH Conference},
+  pages     = {1--11},
+  year      = {2023},
+  doi       = {10.1145/3588432.3591539}
 }
 
-@article{Huang24_GSDeformer,
-  author  = {J. Huang and S. Xu and H. Yu and others},
-  title   = {{GSDeformer}: Direct, Real-Time and Extensible Cage-Based Deformation for {3D} Gaussian Splatting},
-  journal = {arXiv preprint arXiv:2405.15491},
-  year    = {2024},
-  note    = {UNVERIFIED metadata from author list}
+@inproceedings{Wu24_ReconFusion,
+  author    = {Rundi Wu and Ben Mildenhall and Philipp Henzler and Keunhong Park and Ruiqi Gao and Daniel Watson and Pratul P. Srinivasan and Dor Verbin and Jonathan T. Barron and Ben Poole and Aleksander Ho{\l}y{\'n}ski},
+  title     = {{ReconFusion}: {3D} Reconstruction with Diffusion Priors},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {21551--21561},
+  year      = {2024}
 }
 
-@inproceedings{Lin25_HQGS,
-  author    = {X. Lin and S. Luo and X. Shan and others},
-  title     = {{HQGS}: High-Quality Novel View Synthesis with Gaussian Splatting in Degraded Scenes},
-  booktitle = {Proc.\ International Conference on Learning Representations (ICLR)},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
+@inproceedings{Wang24_DUSt3R,
+  author    = {Shuzhe Wang and Vincent Leroy and Yohann Cabon and Boris Chidlovskii and Jerome Revaud},
+  title     = {{DUSt3R}: Geometric {3D} Vision Made Easy},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {20697--20709},
+  year      = {2024}
 }
 
-@inproceedings{Shi26_TrackGS,
-  author    = {D. Shi and S. Cao and L. Fan and others},
-  title     = {{TrackGS}: Optimizing {COLMAP}-Free {3D} Gaussian Splatting with Global Track Constraints},
-  booktitle = {Proc.\ AAAI Conference on Artificial Intelligence},
-  volume    = {40},
-  number    = {11},
-  pages     = {8960--8968},
-  year      = {2026},
-  note      = {UNVERIFIED metadata from author list}
+@misc{Fan24_InstantSplat,
+  author       = {Zhiwen Fan and Wenyan Cong and Kairun Wen and Kevin Wang and Jian Zhang and Xinghao Ding and Danfei Xu and Boris Ivanovic and Marco Pavone and Georgios Pavlakos and Zhangyang Wang and Yue Wang},
+  title        = {{InstantSplat}: Unbounded Sparse-View Pose-Free {Gaussian} Splatting in 40 Seconds},
+  howpublished = {arXiv preprint arXiv:2403.20309},
+  year         = {2024},
+  note         = {Also presented at CVPR 2024 NRI; Related-only pose-free comparison}
 }
 
-@article{Zhang24_GSNet,
-  author  = {Y. Zhang and Z. Wang and J. Han and others},
-  title   = {{GS-Net}: Generalizable Plug-and-Play {3D} Gaussian Splatting Module},
-  journal = {arXiv preprint arXiv:2409.11307},
-  year    = {2024},
-  note    = {UNVERIFIED metadata from author list}
-}
-
-@article{Xiong24_GauUSceneV2,
-  author  = {B. Xiong and N. Zheng and J. Liu and others},
-  title   = {{GauU-Scene V2}: Assessing the Reliability of Image-Based Metrics with Expansive {LiDAR} Image Dataset Using {3DGS} and {NeRF}},
-  journal = {arXiv preprint arXiv:2404.04880},
-  year    = {2024},
-  note    = {UNVERIFIED metadata from author list}
-}
-
-@inproceedings{Byun25_CrossGaussian,
-  author    = {J. Byun and others},
-  title     = {{CrossGaussian}: Enhancing Remote Collaboration through {3D} Gaussian Splatting and Real-Time 360 Streaming},
-  booktitle = {Adjunct Proc.\ ACM Symposium on User Interface Software and Technology (UIST)},
-  pages     = {1--3},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
-}
-
-@article{Lee26_EmbodiedSplat,
-  author  = {S. Lee and others},
-  title   = {{EmbodiedSplat}: Online Feed-Forward Semantic {3DGS} for Open-Vocabulary {3D} Scene Understanding},
-  journal = {arXiv preprint arXiv:2603.04254},
-  year    = {2026},
-  note    = {UNVERIFIED metadata from author list}
-}
-
-@inproceedings{Li25_GauRast,
-  author    = {S. Li and others},
-  title     = {{GauRast}: Enhancing {GPU} Triangle Rasterizers to Accelerate {3D} Gaussian Splatting},
-  booktitle = {Proc.\ ACM/IEEE Design Automation Conference (DAC)},
-  pages     = {1--7},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
-}
-
-@inproceedings{Shi25_LapisGS,
-  author    = {Y. Shi and others},
-  title     = {{LapisGS}: Layered Progressive {3D} Gaussian Splatting for Adaptive Streaming},
-  booktitle = {Proc.\ International Conference on {3D} Vision (3DV)},
-  pages     = {991--1000},
-  year      = {2025},
-  note      = {UNVERIFIED metadata from author list}
-}
-
-@article{Zhang25_GlossyGaussian,
-  author  = {W. Zhang and others},
-  title   = {{Glossy-Gaussian}: Adaptive Anisotropic Gaussians for View-Dependent Appearances},
-  journal = {IEEE Signal Processing Letters},
+@article{Bao25_LoopSparseGS,
+  author  = {Zhenyu Bao and Guibiao Liao and Kaichen Zhou and Kanglin Liu and Qing Li and Guoping Qiu},
+  title   = {{LoopSparseGS}: Loop-Based Sparse-View Friendly {Gaussian} Splatting},
+  journal = {IEEE Transactions on Image Processing},
+  volume  = {34},
+  pages   = {3889--3902},
   year    = {2025},
-  note    = {UNVERIFIED metadata from author list}
+  doi     = {10.1109/TIP.2025.3574929}
 }
+
+@inproceedings{Chen24_MVSplat,
+  author    = {Yuedong Chen and Haofei Xu and Chuanxia Zheng and Bohan Zhuang and Marc Pollefeys and Andreas Geiger and Tat-Jen Cham and Jianfei Cai},
+  title     = {{MVSplat}: Efficient {3D} {Gaussian} Splatting from Sparse Multi-View Images},
+  booktitle = {Proc.\ European Conference on Computer Vision (ECCV)},
+  pages     = {370--381},
+  year      = {2024}
+}
+
+%% ===== Added round-2 (12 verified; OpenAccess pages or arXiv title/authors) =====
+
+@inproceedings{Lu24_ScaffoldGS,
+  author    = {Tao Lu and Mulin Yu and Linning Xu and Yuanbo Xiangli and Limin Wang and Dahua Lin and Bo Dai},
+  title     = {{Scaffold-GS}: Structured {3D} Gaussians for View-Adaptive Rendering},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {20654--20664},
+  year      = {2024}
+}
+
+@inproceedings{Yu24_MipSplatting,
+  author    = {Zehao Yu and Anpei Chen and Binbin Huang and Torsten Sattler and Andreas Geiger},
+  title     = {Mip-Splatting: Alias-free {3D} {Gaussian} Splatting},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {19447--19456},
+  year      = {2024}
+}
+
+@inproceedings{Guedon24_SuGaR,
+  author    = {Antoine Gu{\'e}don and Vincent Lepetit},
+  title     = {{SuGaR}: Surface-Aligned {Gaussian} Splatting for Efficient {3D} Mesh Reconstruction and High-Quality Mesh Rendering},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {5354--5363},
+  year      = {2024}
+}
+
+@inproceedings{Barron23_ZipNeRF,
+  author    = {Jonathan T. Barron and Ben Mildenhall and Dor Verbin and Pratul P. Srinivasan and Peter Hedman},
+  title     = {{Zip-NeRF}: Anti-Aliased Grid-Based Neural Radiance Fields},
+  booktitle = {Proc.\ IEEE/CVF International Conference on Computer Vision (ICCV)},
+  pages     = {19697--19705},
+  year      = {2023}
+}
+
+@inproceedings{Charatan24_pixelSplat,
+  author    = {David Charatan and Sizhe Lester Li and Andrea Tagliasacchi and Vincent Sitzmann},
+  title     = {{pixelSplat}: {3D} {Gaussian} Splats from Image Pairs for Scalable Generalizable {3D} Reconstruction},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {19457--19467},
+  year      = {2024}
+}
+
+@misc{Huang24_2DGS,
+  author       = {Binbin Huang and Zehao Yu and Anpei Chen and Andreas Geiger and Shenghua Gao},
+  title        = {{2D} {Gaussian} Splatting for Geometrically Accurate Radiance Fields},
+  howpublished = {arXiv preprint arXiv:2403.17888},
+  year         = {2024},
+  note         = {Venue pagination not verified in OpenAccess fetch}
+}
+
+@misc{Cheng24_GaussianPro,
+  author       = {Kai Cheng and Xiaoxiao Long and Kaizhi Yang and Yao Yao and Wei Yin and Yuexin Ma and Wenping Wang and Xuejin Chen},
+  title        = {{GaussianPro}: {3D} {Gaussian} Splatting with Progressive Propagation},
+  howpublished = {arXiv preprint arXiv:2402.14650},
+  year         = {2024},
+  note         = {Venue pagination not verified}
+}
+
+@misc{Leroy24_MASt3R,
+  author       = {Vincent Leroy and Yohann Cabon and J{\'e}r{\^o}me Revaud},
+  title        = {Grounding Image Matching in {3D} with {MASt3R}},
+  howpublished = {arXiv preprint arXiv:2406.09756},
+  year         = {2024},
+  note         = {ECCV 2024; pagination not verified}
+}
+
+@misc{Bochkovskii24_DepthPro,
+  author       = {Aleksei Bochkovskii and Ama{\"e}l Delaunoy and Hugo Germain and Marcel Santos and Yichao Zhou and Stephan R. Richter and Vladlen Koltun},
+  title        = {Depth Pro: Sharp Monocular Metric Depth in Less Than a Second},
+  howpublished = {arXiv preprint arXiv:2410.02073},
+  year         = {2024}
+}
+
+@misc{Yariv23_BakedSDF,
+  author       = {Lior Yariv and Peter Hedman and Christian Reiser and Dor Verbin and Pratul P. Srinivasan and Richard Szeliski and Jonathan T. Barron and Ben Mildenhall},
+  title        = {{BakedSDF}: Meshing Neural {SDFs} for Real-Time View Synthesis},
+  howpublished = {arXiv preprint arXiv:2302.14859},
+  year         = {2023},
+  note         = {CVPR 2023; OpenAccess HTML 404 during fetch, pages omitted}
+}
+
+@misc{Cao24_MVSFormerPP,
+  author       = {Chenjie Cao and Xinlin Ren and Yanwei Fu},
+  title        = {{MVSFormer++}: Revealing the Devil in Transformer's Details for Multi-View Stereo},
+  howpublished = {arXiv preprint arXiv:2401.11673},
+  year         = {2024},
+  note         = {ICLR 2024; pagination not verified}
+}
+
+@misc{Wang24_MoGe,
+  author       = {Ruicheng Wang and Sicheng Xu and Cassie Dai and Jianfeng Xiang and Yu Deng and Xin Tong and Jiaolong Yang},
+  title        = {{MoGe}: Unlocking Accurate Monocular Geometry Estimation for Open-Domain Images with Optimal Training Supervision},
+  howpublished = {arXiv preprint arXiv:2410.19115},
+  year         = {2024}
+}
+
+%% ===== Method-oriented additions (no SAM; IDs verified via title search + id_list) =====
+
+@misc{Kheradmand24_3DGSMCMC,
+  author       = {Shakiba Kheradmand and Daniel Rebain and Gopal Sharma and Weiwei Sun and Jeff Tseng and Hossam Isack and Abhishek Kar and Andrea Tagliasacchi and Kwang Moo Yi},
+  title        = {{3D} {Gaussian} Splatting as Markov Chain Monte Carlo},
+  howpublished = {arXiv preprint arXiv:2404.09591},
+  year         = {2024}
+}
+
+@misc{Yu24_GOF,
+  author       = {Zehao Yu and Torsten Sattler and Andreas Geiger},
+  title        = {Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes},
+  howpublished = {arXiv preprint arXiv:2404.10772},
+  year         = {2024}
+}
+
+@misc{Li24_GSOctree,
+  author       = {Jiaze Li and Zhengyu Wen and Luo Zhang and Jiangbei Hu and Fei Hou and Zhebin Zhang and Ying He},
+  title        = {{GS-Octree}: Octree-based {3D} {Gaussian} Splatting for Robust Object-level {3D} Reconstruction Under Strong Lighting},
+  howpublished = {arXiv preprint arXiv:2406.18199},
+  year         = {2024}
+}
+
+@misc{Zhang24_PixelGS,
+  author       = {Zheng Zhang and Wenbo Hu and Yixing Lao and Tong He and Hengshuang Zhao},
+  title        = {{Pixel-GS}: Density Control with Pixel-aware Gradient for {3D} {Gaussian} Splatting},
+  howpublished = {arXiv preprint arXiv:2403.15530},
+  year         = {2024}
+}
+
+@misc{Fang24_MiniSplatting,
+  author       = {Guangchi Fang and Bing Wang},
+  title        = {Mini-Splatting: Representing Scenes with a Constrained Number of Gaussians},
+  howpublished = {arXiv preprint arXiv:2403.14166},
+  year         = {2024}
+}
+
+@misc{Zhang24_RaDeGS,
+  author       = {Baowen Zhang and Chuan Fang and Rakesh Shrestha and Yixun Liang and Xiaoxiao Long and Ping Tan},
+  title        = {{RaDe-GS}: Rasterizing Depth in {Gaussian} Splatting},
+  howpublished = {arXiv preprint arXiv:2406.01467},
+  year         = {2024}
+}
+
+@misc{Sabour24_SpotlessSplats,
+  author       = {Sara Sabour and Lily Goli and George Kopanas and Mark Matthews and Dmitry Lagun and Leonidas Guibas and Alec Jacobson and David J. Fleet and Andrea Tagliasacchi},
+  title        = {{SpotlessSplats}: Ignoring Distractors in {3D} {Gaussian} Splatting},
+  howpublished = {arXiv preprint arXiv:2406.20055},
+  year         = {2024}
+}
+
+%% ===== 2025/2026 batch (verified 2026-10-01 via id_list + title search; CVPR pages from OpenAccess) =====
+
+@inproceedings{Fang26_DropAnSH,
+  author    = {Shuangkang Fang and I-Chao Shen and Xuanyang Zhang and Zesheng Wang and Yufeng Wang and Wenrui Ding and Gang Yu and Takeo Igarashi},
+  title     = {Dropping Anchor and Spherical Harmonics for Sparse-view {Gaussian} Splatting},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {33312--33322},
+  year      = {2026}
+}
+
+@inproceedings{Zhou26_GDAGS,
+  author    = {Zheng Zhou and Yu-Jie Xiong and Jia-Chen Zhang and Chun-Ming Xia and Xihe Qiu and Hongjian Zhan},
+  title     = {Gradient-Direction-Aware Density Control for {3D} {Gaussian} Splatting},
+  booktitle = {Proc.\ International Conference on Learning Representations (ICLR)},
+  year      = {2026},
+  note      = {Also arXiv:2508.09239}
+}
+
+@inproceedings{Zheng25_NexusGS,
+  author    = {Yulong Zheng and Zicheng Jiang and Shengfeng He and Yandu Sun and Junyu Dong and Huaidong Zhang and Yong Du},
+  title     = {{NexusGS}: Sparse View Synthesis with Epipolar Depth Priors in {3D} {Gaussian} Splatting},
+  booktitle = {Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {26800--26809},
+  year      = {2025}
+}
+
+@misc{Patle25_ADGS,
+  author       = {Gurutva Patle and Nilay Girgaonkar and Nagabhushan Somraj and Rajiv Soundararajan},
+  title        = {{AD-GS}: Alternating Densification for Sparse-Input {3D} {Gaussian} Splatting},
+  howpublished = {arXiv preprint arXiv:2509.11003},
+  year         = {2025},
+  note         = {SIGGRAPH Asia 2025; pagination not verified}
+}
+
+

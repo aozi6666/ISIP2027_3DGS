@@ -1,4 +1,4 @@
-# LaTeX build artifacts
+# ===== LaTeX build artifacts (do not commit) =====
 *.aux
 *.bbl
 *.blg
@@ -11,17 +11,39 @@
 *.fdb_latexmk
 *.synctex.gz
 *.synctex(busy)
-*.pdf
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
 
-# Keep docs sample PDF (negated after global *.pdf)
+# Root / local build PDF only
+/main.pdf
+
+# Compiled dump directory (overwrite locally after build)
+/output/
+
+# Exported page proofs (keep .docx source if needed)
+/pages/*.pdf
+
+# ===== Keep required PDFs =====
+# Official SPIE/ISIP docs
 !docs/**/*.pdf
+# Paper figures used by \includegraphics
+!figures/**/*.pdf
 
-# OS / editor
+# ===== OS / editor / local tooling =====
 .DS_Store
+Thumbs.db
 *~
 *.swp
 .idea/
 .vscode/
+.claude/
+*.local.json
 
-# Temp
+# ===== Temp / caches =====
 *.tmp
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

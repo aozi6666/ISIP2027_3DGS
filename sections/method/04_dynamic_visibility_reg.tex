@@ -1,14 +1,7 @@
 \subsection{Dynamic Visibility Regularization}
 \label{sec:dvr}
 
-The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{Xu25_DropoutGS,Park25_DropGaussian}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. To reduce this imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism, as illustrated in Fig.~\ref{fig:dvr}.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/dvr_dropout.pdf}
-\caption{Overview of the proposed Gaussian Dropout mechanism in Dynamic Visibility Regularization (DVR).}
-\label{fig:dvr}
-\end{figure}
+The Visual Hull and VGGT-Depth stages improve Gaussian initialization, but sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussian primitives appear in fewer training views or pixels and therefore receive weaker reconstruction gradients~\cite{Xu25_DropoutGS,Park25_DropGaussian}. Visibility priors have also been explored to regularize sparse-input radiance fields~\cite{Somraj23_ViPNeRF}, and distractor-aware training further highlights sensitivity to unreliable observations~\cite{Sabour24_SpotlessSplats}. Repeatedly visible regions can dominate fitting and lead to late-stage overfitting. Beyond fixed densification heuristics, densification can also be cast as stochastic sampling~\cite{Kheradmand24_3DGSMCMC}, while constraining the Gaussian budget motivates careful control of which primitives participate in rendering~\cite{Fang24_MiniSplatting}. To reduce visibility imbalance, we use DVR, implemented through a progressive Gaussian dropout mechanism.
 
 At iteration $t$, DVR randomly masks a subset of Gaussian primitives for dropout rendering. The remaining primitives are optimized from the resulting rendering error, changing the set of primitives that carries the reconstruction signal across iterations. The dropout ratio increases linearly with training progress:
 \begin{equation}
@@ -35,4 +28,4 @@ with $\lambda=0.2$~\cite{Kerbl23_3DGS}. The final objective is
 +
 \beta\,\mathcal{L}_{\mathrm{color}}(I_{\mathrm{drop}},I),
 \end{equation}
-where $\beta$ is set to $0.5$--$1.0$. The full-render term stabilizes the reconstruction target, while the dropout term regularizes optimization under sparse visibility.
+where $\beta$ is set to $0.5$--$1.0$. The full-render term stabilizes the reconstruction target, while the dropout term regularizes optimization under sparse visibility. Related sparse-view designs further modulate masking with depth and density cues~\cite{Song26_D2GS}, or drop anchors and spherical harmonics~\cite{Fang26_DropAnSH}; DVR instead uses a progressive random schedule with an uncompensated dropout branch.
