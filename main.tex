@@ -2,6 +2,10 @@
 
 \renewcommand{\baselinestretch}{1.0}
 
+% Checklist A4 side margins: 1.93 cm (spie.cls a4paper patch is commented out)
+\oddsidemargin -0.61cm
+\evensidemargin -0.61cm
+
 \usepackage{times}  % Times / TNR text (checklist; avoids mathptmx rsfs deps)
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
@@ -10,6 +14,9 @@
 \usepackage[table]{xcolor}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \input{tables/table_style}
+
+% Checklist: in-text citations as superscript [n]
+\renewcommand{\citeform}[1]{[#1]}
 
 \title{SynGS: synergizing explicit geometry and transformer depth priors for sparse-view 3D Gaussian Splatting}
 

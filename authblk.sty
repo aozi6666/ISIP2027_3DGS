@@ -18,17 +18,45 @@
 \setlength{\affilsepwd}{1em}
 
 \gdef\@author{}
+\gdef\AB@affils{}
+
+% Store each formatted author, then rebuild \@author so 3+ names
+% become "A, B, and C" (old incremental Authand-on-2nd gave "A and B, C").
 \renewcommand\author{\@ifnextchar[\author@i{\author@i[]}}
 \def\author@i[#1]#2{%
   \stepcounter{authors}%
   \begingroup
     \let\protect\@unexpandable@protect
-    \protected@xdef\@author{\@author
-      \ifnum\value{authors}>1
-        \ifnum\value{authors}=2 \Authand\else\Authsep\fi
-      \fi
-      {\Authfont #2\ifx\relax#1\relax\else\textsuperscript{\normalfont#1}\fi}}%
+    \protected@xdef\AB@tmp@chunk{%
+      {\Authfont #2%
+       \ifx\relax#1\relax\else\textsuperscript{\normalfont#1}\fi}}%
   \endgroup
+  \expandafter\let\csname AB@author@\theauthors\endcsname\AB@tmp@chunk
+  \AB@rebuild@authorlist
+}
+
+\def\AB@rebuild@authorlist{%
+  \gdef\@author{}%
+  \begingroup
+    \let\protect\@unexpandable@protect
+    \count@=\z@
+    \loop
+      \advance\count@\@ne
+    \ifnum\count@>\value{authors}\else
+      \protected@xdef\@author{\@author
+        \ifnum\count@>\@ne
+          \ifnum\count@=\value{authors}
+            \ifnum\value{authors}=\tw@ \Authand\else\Authands\fi
+          \else
+            \Authsep
+          \fi
+        \fi
+        \csname AB@author@\the\count@\endcsname}%
+    \repeat
+  \endgroup
+  \ifx\AB@affils\@empty\else
+    \protected@xdef\@author{\@author\AB@affils}%
+  \fi
 }
 
 \newcommand\affil{\@ifnextchar[\@affil@i{\@affil@i[]}}
@@ -36,6 +64,11 @@
   \stepcounter{affil}%
   \begingroup
     \let\protect\@unexpandable@protect
+    \protected@xdef\AB@affils{\AB@affils
+      \\[\affilsepwd]
+      {\Affilfont
+       \ifx\relax#1\relax\else\textsuperscript{\normalfont#1}\,\fi
+       #2}}%
     \protected@xdef\@author{\@author
       \\[\affilsepwd]
       {\Affilfont
